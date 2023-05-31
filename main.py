@@ -8,8 +8,9 @@ options = Options()
 options.add_argument("-headless")  # Run in headless mode
 options.add_argument("--no-sandbox")  # Bypass OS security model
 options.add_argument("--disable-dev-shm-usage")  # Disable /dev/shm usage
+options.add_argument("--page-load-strategy=eager")
 
-driver = webdriver.Chrome()
+driver = webdriver.Chrome(options=options)
 
 url = "https://anilist.co/user/polkura/mangalist/Planning"  # Replace with the actual URL
 
