@@ -21,6 +21,10 @@ for row in entry_rows:
     progress_div = row.find('div', class_='progress')
     if progress_div:
         progress_content = progress_div.text.strip().replace('\n+','')
+        if progress_content == "0":
+            progress_content = "Ongoing"
+        else:
+            progress_content = "Complete"
         progress_arr.append(progress_content)
 
     format_div = row.find('div', class_='format')
